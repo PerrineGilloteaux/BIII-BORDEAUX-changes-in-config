@@ -6,15 +6,12 @@ dependencies:
     - node
     - user
     - taxonomy
-    - comment
     - synonyms
     - search_api
   config:
-    - field.storage.user.field_first_name
     - field.storage.node.field_free_tagging
     - field.storage.node.field_has_function
     - field.storage.node.field_has_topic
-    - field.storage.user.field_name
     - field.storage.node.field_tags
     - field.storage.node.body
     - search_api.server.default_server
@@ -36,14 +33,6 @@ field_settings:
         - node
         - user
         - user
-  field_first_name:
-    label: 'First name'
-    datasource_id: 'entity:user'
-    property_path: field_first_name
-    type: text
-    dependencies:
-      config:
-        - field.storage.user.field_first_name
   field_free_tagging:
     label: 'Additional keywords'
     datasource_id: 'entity:node'
@@ -70,14 +59,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_has_topic
-  field_name:
-    label: 'Name (true name)'
-    datasource_id: 'entity:user'
-    property_path: field_name
-    type: text
-    dependencies:
-      config:
-        - field.storage.user.field_name
   field_tags:
     label: Tags
     datasource_id: 'entity:node'
@@ -152,16 +133,6 @@ field_settings:
     dependencies:
       module:
         - node
-  status_1:
-    label: status_1
-    datasource_id: 'entity:comment'
-    property_path: status
-    type: boolean
-    indexed_locked: true
-    type_locked: true
-    dependencies:
-      module:
-        - comment
   synonyms_1:
     label: 'has topic » Taxonomy term » Entity synonyms'
     datasource_id: 'entity:node'
@@ -204,22 +175,10 @@ field_settings:
       module:
         - node
 datasource_settings:
-  'entity:comment':
-    bundles:
-      default: false
-      selected:
-        - comment
-    languages:
-      default: true
-      selected: {  }
   'entity:node':
     bundles:
       default: true
       selected: {  }
-    languages:
-      default: true
-      selected: {  }
-  'entity:user':
     languages:
       default: true
       selected: {  }
@@ -237,12 +196,6 @@ processor_settings:
   entity_status:
     weights:
       preprocess_index: -10
-  hierarchy:
-    fields:
-      field_has_function: taxonomy_term-parent
-      field_has_topic: taxonomy_term-parent
-    weights:
-      preprocess_index: -45
   highlight:
     highlight: always
     highlight_partial: false
@@ -256,7 +209,6 @@ processor_settings:
   html_filter:
     all_fields: false
     fields:
-      - processed
       - rendered_item
     title: true
     alt: false
@@ -272,10 +224,7 @@ processor_settings:
   ignorecase:
     all_fields: false
     fields:
-      - format
-      - name_1
-      - name_2
-      - processed
+      - rendered_item
       - title
     weights:
       preprocess_index: -5
@@ -341,11 +290,9 @@ processor_settings:
     all_fields: true
     fields:
       - author
-      - field_first_name
       - field_free_tagging
       - field_has_function
       - field_has_topic
-      - field_name
       - field_tags
       - format
       - name_1

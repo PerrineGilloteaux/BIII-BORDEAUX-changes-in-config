@@ -1,7 +1,0 @@
-uuid: null
-langcode: en
-status: true
-dependencies: {  }
-formId: user_login_form
-captchaType: captcha/Math
-label: user_login_form
