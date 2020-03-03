@@ -1,0 +1,70 @@
+uuid: ea9a58d1-bb28-4d94-9003-cb19b4780721
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.book.body
+    - field.field.node.book.field_author_s_
+    - field.field.node.book.field_content_type
+    - field.field.node.book.field_date
+    - field.field.node.book.field_doi
+    - field.field.node.book.field_event
+    - field.field.node.book.field_expected
+    - field.field.node.book.field_format
+    - field.field.node.book.field_free_tagging
+    - field.field.node.book.field_has_executable
+    - field.field.node.book.field_has_image_data
+    - field.field.node.book.field_has_license
+    - field.field.node.book.field_has_practical_exercices
+    - field.field.node.book.field_has_slides
+    - field.field.node.book.field_is_training_material_of
+    - field.field.node.book.field_parent
+    - field.field.node.book.field_prerequisites
+    - field.field.node.book.field_topics_covered
+    - field.field.node.book.field_trainer_s_presenter_s_
+    - field.field.node.book.field_url
+    - node.type.book
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: 8NARVQ-lU87ljX8WBrVPdmrTPMCjlkG3-7hoVWlkAFs
+id: node.book.teaser
+targetEntityType: node
+bundle: book
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 100
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 101
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_author_s_: true
+  field_content_type: true
+  field_date: true
+  field_doi: true
+  field_event: true
+  field_expected: true
+  field_format: true
+  field_free_tagging: true
+  field_has_executable: true
+  field_has_image_data: true
+  field_has_license: true
+  field_has_practical_exercices: true
+  field_has_slides: true
+  field_is_training_material_of: true
+  field_parent: true
+  field_prerequisites: true
+  field_topics_covered: true
+  field_trainer_s_presenter_s_: true
+  field_url: true

@@ -1,0 +1,372 @@
+uuid: 949a0407-ed0a-4b07-b201-a0739a402cb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.software.body
+    - field.field.node.software.field_attribution_instructions
+    - field.field.node.software.field_free_tagging
+    - field.field.node.software.field_give_feedback_on_this_soft
+    - field.field.node.software.field_has_author
+    - field.field.node.software.field_has_biological_terms
+    - field.field.node.software.field_has_comparison
+    - field.field.node.software.field_has_documentation
+    - field.field.node.software.field_has_doi
+    - field.field.node.software.field_has_entry_curator
+    - field.field.node.software.field_has_function
+    - field.field.node.software.field_has_implementation
+    - field.field.node.software.field_has_interaction_level
+    - field.field.node.software.field_has_license
+    - field.field.node.software.field_has_location
+    - field.field.node.software.field_has_programming_language
+    - field.field.node.software.field_has_reference_publication
+    - field.field.node.software.field_has_topic
+    - field.field.node.software.field_has_usage_example
+    - field.field.node.software.field_image
+    - field.field.node.software.field_is_compatible_with
+    - field.field.node.software.field_is_covered_by_training_mat
+    - field.field.node.software.field_is_dependent_of
+    - field.field.node.software.field_license_openness
+    - field.field.node.software.field_platform
+    - field.field.node.software.field_supported_image_dimension
+    - field.field.node.software.field_type
+    - field.field.node.software.field_workflow_steps
+    - image.style.thumbnail
+    - node.type.software
+  module:
+    - chosen_field
+    - comment
+    - field_group
+    - image
+    - link
+    - paragraphs
+    - text
+third_party_settings:
+  field_group:
+    group_main:
+      children:
+        - title
+        - field_type
+        - uid
+        - body
+        - field_has_author
+        - field_image
+        - field_license_openness
+        - field_has_entry_curator
+      parent_name: ''
+      weight: 0
+      format_type: details
+      format_settings:
+        label: Main
+        required_fields: true
+        id: ''
+        classes: ''
+        open: false
+      label: Main
+      region: content
+    group_links:
+      children:
+        - field_has_location
+        - field_has_reference_publication
+        - field_has_documentation
+        - field_has_usage_example
+        - field_has_comparison
+        - field_has_doi
+        - field_is_covered_by_training_mat
+      parent_name: ''
+      weight: 1
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
+      label: Links
+      region: content
+    group_tags:
+      children:
+        - field_has_function
+        - field_has_topic
+        - field_has_biological_terms
+        - field_free_tagging
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
+      label: Tags
+      region: content
+    group_usages:
+      children:
+        - field_is_dependent_of
+        - field_platform
+        - field_has_implementation
+        - field_has_license
+        - field_has_programming_language
+        - field_is_compatible_with
+        - field_supported_image_dimension
+        - field_has_interaction_level
+        - field_attribution_instructions
+      parent_name: ''
+      weight: 3
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
+      label: Usages
+      region: content
+id: node.software.default
+targetEntityType: node
+bundle: software
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 3
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_attribution_instructions:
+    weight: 36
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_free_tagging:
+    weight: 31
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_give_feedback_on_this_soft:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_has_author:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_has_biological_terms:
+    weight: 30
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_has_comparison:
+    weight: 13
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_has_documentation:
+    weight: 10
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_has_doi:
+    weight: 14
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_has_entry_curator:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_has_function:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_has_implementation:
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_has_interaction_level:
+    weight: 35
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_has_license:
+    weight: 31
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_has_location:
+    weight: 8
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_has_programming_language:
+    weight: 32
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  field_has_reference_publication:
+    weight: 9
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_has_topic:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_has_usage_example:
+    weight: 11
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_image:
+    weight: 5
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_is_compatible_with:
+    weight: 33
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  field_is_covered_by_training_mat:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  field_is_dependent_of:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  field_license_openness:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_platform:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_supported_image_dimension:
+    weight: 34
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_workflow_steps:
+    type: entity_reference_paragraphs
+    weight: 37
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  url_redirects:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  path: true
+  promote: true
+  sticky: true
